@@ -6,9 +6,9 @@ const ArticleCard = props => {
     title,
     author,
     topic,
-    votes,
     comment_count,
-    article_id
+    article_id,
+    created_at
   } = props.article;
   return (
     <li className="articleCard">
@@ -18,9 +18,9 @@ const ArticleCard = props => {
       <br />
       Topic: {topic}
       <br />
-      Votes: {votes}
-      <br />
       Comment count: {comment_count}
+      <br />
+      Date posted: {created_at.slice(0, 9)}
       <br />
       <Link to={`/articles/${article_id}`}>View full article</Link>
     </li>

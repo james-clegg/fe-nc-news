@@ -9,7 +9,7 @@ import SingleArticlePage from './Components/SingleArticle/SingleArticlePage';
 
 class App extends Component {
   state = {
-    user: "JessJelly"
+    user: "jessjelly"
   };
 
   render() {
