@@ -11,8 +11,9 @@ class PostNewCommentForm extends Component {
         <h3>Post a new comment:</h3>
         <form onSubmit={this.handleSubmit}>
           Comment:{" "}
-          <input
-            type="text"
+          <textarea
+            rows='10'
+            cols='80'
             name="comment"
             onChange={this.handleChange}
             value={this.state.comment}
@@ -28,6 +29,7 @@ class PostNewCommentForm extends Component {
     event.preventDefault();
     const { comment } = this.state;
     this.props.addPostedComment(comment);
+    this.setState({comment: ''})
   };
 
   handleChange = ({ target: { name, value } }) => {
