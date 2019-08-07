@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import * as API from "../../api";
 
 class CommentCard extends Component {
   state = {
@@ -27,12 +27,7 @@ class CommentCard extends Component {
   }
 
   upvoteComments = currentVotes => {
-    axios.patch(
-      `https://jc-nc-news.herokuapp.com/api/comments/${
-        this.props.comment.comment_id
-      }`,
-      { inc_votes: 1 }
-    );
+    API.upvoteComment(this.props.comment.comment_id);
     currentVotes += 1;
     this.setState({ incrementedVotes: currentVotes });
   };

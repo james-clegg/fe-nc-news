@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import * as API from "../../api";
 
 class SingleArticle extends Component {
   state = {
@@ -36,11 +36,9 @@ class SingleArticle extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get(`https://jc-nc-news.herokuapp.com/api/articles/${this.props.id}`)
-      .then(({ data }) => {
-        this.setState({ article: data.article });
-      });
+    API.getArticleByArticleID(this.props.id).then(article => {
+      this.setState({ article });
+    });
   }
 }
 

@@ -23,3 +23,22 @@ export const getArticlesWithParams = (sort_by, order, topic) => {
       return articles;
     });
 };
+
+export const upvoteComment = comment_id => {
+  return request.patch(`comments/${comment_id}`, { inc_votes: 1 });
+};
+
+export const getCommentsOnArticle = id => {
+  return request
+    .get(`/articles/${id}/comments`)
+    .then(({ data: { comments } }) => {
+      return comments;
+    });
+};
+
+export const getArticleByArticleID = id => {
+  return request
+  .get(`/articles/${id}`).then(({data: {article}}) => {
+    return article;
+  })
+}

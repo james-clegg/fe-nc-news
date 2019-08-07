@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import * as API from "../../api";
 import CommentCard from "./CommentCard";
 
 class CommentsOnArticle extends Component {
@@ -34,20 +34,13 @@ class CommentsOnArticle extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get(
-        `https://jc-nc-news.herokuapp.com/api/articles/${
-          this.props.id
-        }/comments`
-      )
-      .then(({ data }) => {
-        this.setState({
-          comments: data.comments,
-          requestDone: true
-        });
+    API.getCommentsOnArticle(this.props.id).then(comments => {
+      this.setState({
+        comments: comments,
+        requestDone: true
       });
+    });
   }
-
 }
 
 export default CommentsOnArticle;
