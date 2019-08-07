@@ -6,7 +6,8 @@ import PostNewCommentForm from "./PostNewCommentForm";
 class CommentsOnArticle extends Component {
   state = {
     comments: "",
-    requestDone: false
+    requestDone: false,
+    didDelete: false
   };
 
   render() {
@@ -15,6 +16,7 @@ class CommentsOnArticle extends Component {
         {this.state.requestDone === true ? (
           <>
             <h2>Comments</h2>
+            {this.state.didDelete && <p>Comment was successfully deleted!</p>}
             <ul>
               {this.state.comments.map(comment => {
                 return (
@@ -22,6 +24,9 @@ class CommentsOnArticle extends Component {
                     comment={comment}
                     id={this.props.id}
                     key={comment.comment_id}
+                    removeDeletedCommentFromArray={
+                      this.removeDeletedCommentFromArray
+                    }
                   />
                 );
               })}
@@ -52,10 +57,22 @@ class CommentsOnArticle extends Component {
       comment => {
         this.setState(currentState => {
           const comments = [comment, ...currentState.comments];
-          return { comments };
+          return { comments, didDelete: false };
         });
       }
     );
+  };
+
+  removeDeletedCommentFromArray = comment_id => {
+    this.setState(currentState => {
+      const newComments = currentState.comments.filter(comment => {
+        return comment.comment_id !== comment_id;
+      });
+      return {
+        comments: newComments,
+        didDelete: true
+      };
+    });
   };
 }
 

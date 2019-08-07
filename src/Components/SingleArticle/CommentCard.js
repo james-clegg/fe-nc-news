@@ -20,8 +20,9 @@ class CommentCard extends Component {
           onClick={() => this.upvoteComments(this.state.incrementedVotes)}
           disabled={this.state.incrementedVotes > 0}
         >
-          Upvote Comment!{" "}
+          Upvote comment!{" "}
         </button>
+        <button onClick={this.deleteComment}>Delete comment</button>
       </li>
     );
   }
@@ -30,6 +31,12 @@ class CommentCard extends Component {
     API.upvoteComment(this.props.comment.comment_id);
     currentVotes += 1;
     this.setState({ incrementedVotes: currentVotes });
+  };
+
+  deleteComment = () => {
+    const { comment_id } = this.props.comment;
+    API.deleteComment(comment_id);
+    this.props.removeDeletedCommentFromArray(comment_id);
   };
 }
 

@@ -50,3 +50,9 @@ export const postNewComment = (username, comment, article_id) => {
     })
     .catch(console.dir);
 };
+
+export const deleteComment = comment_id => {
+  return request.delete(`/comments/${comment_id}`).then(response => {
+    return response;
+  });
+};
