@@ -6,25 +6,25 @@ const QuerySelectors = props => {
       <label>
         Sort_by:
         <select name={"sort_by"} onChange={props.updateQueries}>
-          <option>Date posted</option>
-          <option>Votes</option>
-          <option>Most comments</option>
+          <option value="created_at">Date posted</option>
+          <option value="votes">Votes</option>
+          <option value="comment_count">Number of comments</option>
         </select>
       </label>
       <label>
         Order:
         <select name={"order"} onChange={props.updateQueries}>
-          <option>Desc</option>
-          <option>Asc</option>
+          <option value="desc">Descending</option>
+          <option value="asc">Ascending</option>
         </select>
       </label>
       <label>
         Filter by topic:
         <select name={"filterByTopic"} onChange={props.updateQueries}>
-          <option>No filter</option>
-          <option>Coding</option>
-          <option>Football</option>
-          <option>Cooking</option>
+          <option value="">No filter</option>
+          <option value="coding">Coding</option>
+          <option value="football">Football</option>
+          <option value="cooking">Cooking</option>
         </select>
       </label>
     </>

@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import axios from "axios";
 import ArticleCard from "./ArticleCard";
 import QuerySelectors from "./QuerySelectors";
+import * as API from "../../api";
 
 class ListOfAllArticles extends Component {
   state = {
     articles: [],
-    sort_by: null,
-    filterByTopic: null,
+    sort_by: "created_at",
+    filterByTopic: "",
     order: "desc"
   };
 
@@ -26,15 +26,10 @@ class ListOfAllArticles extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get("https://jc-nc-news.herokuapp.com/api/articles")
-      .then(({ data }) => {
-        this.setState({ articles: data.articles });
-      });
+    API.getAllArticles().then(articles => this.setState({ articles }));
   }
 
   updateQueries = ({ target: { name, value } }) => {
-    console.log(name, value);
     this.setState({ [name]: value });
   };
 
@@ -45,17 +40,9 @@ class ListOfAllArticles extends Component {
       prevState.filterByTopic !== filterByTopic ||
       prevState.order !== order
     ) {
-      axios
-        .get("https://jc-nc-news.herokuapp.com/api/articles", {
-          params: {
-            sort_by: this.state.sort_by,
-            order: this.state.order,
-            topic: this.state.filterByTopic
-          }
-        })
-        .then(({ data }) => {
-          this.setState({ articles: data.articles });
-        });
+      API.getArticlesWithParams(sort_by, order, filterByTopic).then(articles =>
+        this.setState({ articles })
+      );
     }
   };
 }
