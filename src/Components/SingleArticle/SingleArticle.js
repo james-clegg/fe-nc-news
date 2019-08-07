@@ -3,7 +3,8 @@ import * as API from "../../api";
 
 class SingleArticle extends Component {
   state = {
-    article: ""
+    article: "",
+    incrementedVotes: 0
   };
 
   render() {
@@ -12,10 +13,10 @@ class SingleArticle extends Component {
       title,
       body,
       topic,
-      votes,
       created_at,
       comment_count
     } = this.state.article;
+    let { votes } = this.state.article;
     return (
       <>
         {this.state.article ? (
@@ -24,9 +25,21 @@ class SingleArticle extends Component {
             <p>By: {author}</p>
             <p>Topic: {topic}</p>
             <p> {body}</p>
-            <p>Votes: {votes}</p>
+            <p>Votes: {(votes += this.state.incrementedVotes)}</p>
             <p>Created on: {created_at.slice(0, 9)}</p>
             <p>Number of comments: {comment_count}</p>
+            <button
+              onClick={() => this.articleVoter(this.state.incrementedVotes, 1)}
+              disabled={this.state.incrementedVotes > 0}
+            >
+              Upvote article!
+            </button>
+            <button
+              onClick={() => this.articleVoter(this.state.incrementedVotes, -1)}
+              disabled={this.state.incrementedVotes < 0}
+            >
+              Downvote article!
+            </button>
           </section>
         ) : (
           "Loading article..."
@@ -40,6 +53,12 @@ class SingleArticle extends Component {
       this.setState({ article });
     });
   }
+
+  articleVoter = (currentVotes, numberToIncrementBy) => {
+    API.voteOnArticle(this.props.id, numberToIncrementBy);
+    currentVotes += numberToIncrementBy;
+    this.setState({ incrementedVotes: currentVotes });
+  };
 }
 
 export default SingleArticle;

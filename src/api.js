@@ -24,8 +24,14 @@ export const getArticlesWithParams = (sort_by, order, topic) => {
     });
 };
 
-export const upvoteComment = (comment_id, numberToIncrementBy) => {
+export const voteOnComment = (comment_id, numberToIncrementBy) => {
   return request.patch(`comments/${comment_id}`, {
+    inc_votes: numberToIncrementBy
+  });
+};
+
+export const voteOnArticle = (article_id, numberToIncrementBy) => {
+  return request.patch(`articles/${article_id}`, {
     inc_votes: numberToIncrementBy
   });
 };

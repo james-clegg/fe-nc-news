@@ -17,13 +17,13 @@ class CommentCard extends Component {
         <p>Created on: {created_at.slice(0, 9)}</p>
         <p>Votes: {(votes += this.state.incrementedVotes)}</p>
         <button
-          onClick={() => this.voter(this.state.incrementedVotes, 1)}
+          onClick={() => this.commentVoter(this.state.incrementedVotes, 1)}
           disabled={this.state.incrementedVotes > 0}
         >
           Upvote comment!{" "}
         </button>
         <button
-          onClick={() => this.voter(this.state.incrementedVotes, -1)}
+          onClick={() => this.commentVoter(this.state.incrementedVotes, -1)}
           disabled={this.state.incrementedVotes < 0}
         >
           Downvote comment!
@@ -33,16 +33,20 @@ class CommentCard extends Component {
     );
   }
 
-  voter = (currentVotes, numberToIncrementBy) => {
-    API.upvoteComment(this.props.comment.comment_id, numberToIncrementBy);
+  commentVoter = (currentVotes, numberToIncrementBy) => {
+    API.voteOnComment(this.props.comment.comment_id, numberToIncrementBy);
     currentVotes += numberToIncrementBy;
     this.setState({ incrementedVotes: currentVotes });
   };
 
   deleteComment = () => {
-    const { comment_id } = this.props.comment;
-    API.deleteComment(comment_id);
-    this.props.removeDeletedCommentFromArray(comment_id);
+    const { comment_id, author } = this.props.comment;
+    if (this.props.user === author) {
+      API.deleteComment(comment_id);
+      this.props.removeDeletedCommentFromArray(comment_id);
+    } else {
+      this.props.refuseToDelete()
+    }
   };
 }
 

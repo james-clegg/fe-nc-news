@@ -7,7 +7,8 @@ class CommentsOnArticle extends Component {
   state = {
     comments: "",
     requestDone: false,
-    didDelete: false
+    didDelete: false,
+    failedDelete: false
   };
 
   render() {
@@ -16,6 +17,9 @@ class CommentsOnArticle extends Component {
         {this.state.requestDone === true ? (
           <>
             <h2>Comments</h2>
+            {this.state.failedDelete && (
+              <p>Could not delete comment as current user is not the author</p>
+            )}
             {this.state.didDelete && <p>Comment was successfully deleted!</p>}
             <ul>
               {this.state.comments.map(comment => {
@@ -27,6 +31,8 @@ class CommentsOnArticle extends Component {
                     removeDeletedCommentFromArray={
                       this.removeDeletedCommentFromArray
                     }
+                    refuseToDelete={this.refuseToDelete}
+                    user={this.props.user}
                   />
                 );
               })}
@@ -57,7 +63,7 @@ class CommentsOnArticle extends Component {
       comment => {
         this.setState(currentState => {
           const comments = [comment, ...currentState.comments];
-          return { comments, didDelete: false };
+          return { comments, didDelete: false, failedDelete: false };
         });
       }
     );
@@ -70,8 +76,16 @@ class CommentsOnArticle extends Component {
       });
       return {
         comments: newComments,
-        didDelete: true
+        didDelete: true,
+        failedDelete: false
       };
+    });
+  };
+
+  refuseToDelete = () => {
+    this.setState({
+      failedDelete: true,
+      didDelete: false
     });
   };
 }

@@ -8,21 +8,20 @@ const ArticleCard = props => {
     topic,
     comment_count,
     article_id,
-    created_at
+    created_at,
+    votes
   } = props.article;
   return (
     <li className="articleCard">
-      Title: {title}
-      <br />
-      Author: {author}
-      <br />
-      Topic: {topic}
-      <br />
-      Comment count: {comment_count}
-      <br />
-      Date posted: {created_at.slice(0, 9)}
-      <br />
-      <Link to={`/articles/${article_id}`}>View full article</Link>
+      <p >Title: {title}</p>
+      <p>Author: {author}</p>
+      <p>Topic: {topic}</p>
+      <p>Comment count: {comment_count}</p>
+      <p>Votes: {votes}</p>
+      <p>Date posted: {created_at.slice(0, 9)}</p>
+      <p>
+        <Link to={`/articles/${article_id}`}>View full article</Link>
+      </p>
     </li>
   );
 };
