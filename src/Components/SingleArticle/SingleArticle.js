@@ -32,13 +32,19 @@ class SingleArticle extends Component {
               onClick={() => this.articleVoter(this.state.incrementedVotes, 1)}
               disabled={this.state.incrementedVotes > 0}
             >
-              Upvote article!
+              Upvote article!{" "}
+              <span role="img" aria-label="up arrow">
+                ⬆️
+              </span>
             </button>
             <button
               onClick={() => this.articleVoter(this.state.incrementedVotes, -1)}
               disabled={this.state.incrementedVotes < 0}
             >
-              Downvote article!
+              Downvote article!{" "}
+              <span role="img" aria-label="down arrow">
+                ⬇️
+              </span>
             </button>
           </section>
         ) : (

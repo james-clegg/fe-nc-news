@@ -21,12 +21,18 @@ class CommentCard extends Component {
           disabled={this.state.incrementedVotes > 0}
         >
           Upvote comment!{" "}
+          <span role="img" aria-label="up arrow">
+            ⬆️
+          </span>{" "}
         </button>
         <button
           onClick={() => this.commentVoter(this.state.incrementedVotes, -1)}
           disabled={this.state.incrementedVotes < 0}
         >
-          Downvote comment!
+          Downvote comment!{" "}
+          <span role="img" aria-label="down arrow">
+            ⬇️
+          </span>
         </button>
         <button onClick={this.deleteComment}>Delete comment</button>
       </li>
@@ -45,7 +51,7 @@ class CommentCard extends Component {
       API.deleteComment(comment_id);
       this.props.removeDeletedCommentFromArray(comment_id);
     } else {
-      this.props.refuseToDelete()
+      this.props.refuseToDelete();
     }
   };
 }
