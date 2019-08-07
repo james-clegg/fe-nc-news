@@ -37,8 +37,16 @@ export const getCommentsOnArticle = id => {
 };
 
 export const getArticleByArticleID = id => {
-  return request
-  .get(`/articles/${id}`).then(({data: {article}}) => {
+  return request.get(`/articles/${id}`).then(({ data: { article } }) => {
     return article;
-  })
-}
+  });
+};
+
+export const postNewComment = (username, comment, article_id) => {
+  return request
+    .post(`/articles/${article_id}/comments`, { username, body: comment })
+    .then(({ data: { comment } }) => {
+      return comment;
+    })
+    .catch(console.dir);
+};

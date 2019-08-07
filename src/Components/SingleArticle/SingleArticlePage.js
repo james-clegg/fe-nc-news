@@ -5,8 +5,8 @@ import CommentsOnArticle from "./CommentsOnArticle";
 const SingleArticlePage = props => {
   return (
     <>
-      <SingleArticle id={props.articleID}/>
-      <CommentsOnArticle id={props.articleID}/>
+      <SingleArticle id={props.articleID} />
+      <CommentsOnArticle id={props.articleID} user={props.user} />
     </>
   );
 };

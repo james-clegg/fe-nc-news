@@ -7,11 +7,11 @@ const NavBar = () => {
       <Link className="navbarItem" to="/">
         Home
       </Link>
-      <Link className="navbarItem" to="/articles">
+      <Link className="navbarItem" to="/allArticles">
         All Articles
       </Link>
-      <Link className="navbarItem" to="/topics">
-        Topics
+      <Link className="navbarItem" to="/featuredArticles">
+        Featured Articles
       </Link>
     </nav>
   );

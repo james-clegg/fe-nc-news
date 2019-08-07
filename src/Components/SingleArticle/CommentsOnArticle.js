@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as API from "../../api";
 import CommentCard from "./CommentCard";
+import PostNewCommentForm from "./PostNewCommentForm";
 
 class CommentsOnArticle extends Component {
   state = {
@@ -25,6 +26,10 @@ class CommentsOnArticle extends Component {
                 );
               })}
             </ul>
+            <PostNewCommentForm
+              addPostedComment={this.addPostedComment}
+              user={this.props.user}
+            />
           </>
         ) : (
           "Loading comments..."
@@ -41,6 +46,17 @@ class CommentsOnArticle extends Component {
       });
     });
   }
+
+  addPostedComment = comment => {
+    API.postNewComment(this.props.user, comment, this.props.id).then(
+      comment => {
+        this.setState(currentState => {
+          const comments = [comment, ...currentState.comments];
+          return { comments };
+        });
+      }
+    );
+  };
 }
 
 export default CommentsOnArticle;
