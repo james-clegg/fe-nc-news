@@ -8,6 +8,7 @@ import SingleArticlePage from "./Components/SingleArticle/SingleArticlePage";
 import BurgerMenu from "./Components/BurgerMenu";
 import NCicon from "./Components/NCicon";
 import UserProfilePage from "./Components/UserProfilePage/UserProfilePage";
+import ErrorPage from "./Components/ErrorPage";
 
 class App extends Component {
   state = {
@@ -21,6 +22,7 @@ class App extends Component {
         <BurgerMenu username={this.state.user} />
         <NCicon />
         <Router>
+          <ErrorPage default error={{ status: 404, msg: "page not found" }} />
           <HomePage path="/" user={this.state.user} />
           <ListOfAllArticles path="/allArticles" />
           <SingleArticlePage

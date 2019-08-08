@@ -3,16 +3,19 @@ import ArticleCard from "./ArticleCard";
 import QuerySelectors from "./QuerySelectors";
 import * as API from "../../api";
 import styles from "./ListOfArticles.module.css";
+import ErrorPage from "../ErrorPage";
 
 class ListOfAllArticles extends Component {
   state = {
     articles: [],
     sort_by: "created_at",
     filterByTopic: "",
-    order: "desc"
+    order: "desc",
+    error: null
   };
 
   render() {
+    if (this.state.error) return <ErrorPage error={this.state.error} />;
     return (
       <>
         <p className={styles.listOfArticlesHeader}>Articles</p>
@@ -27,8 +30,16 @@ class ListOfAllArticles extends Component {
   }
 
   componentDidMount() {
-    API.getAllArticles().then(articles => this.setState({ articles }));
+    this.getAllTheArticles()
   }
+
+  getAllTheArticles = () => {
+    API.getAllArticles()
+      .then(articles => this.setState({ articles }))
+      .catch(({ response: { data } }) => {
+        this.setState({ error: { status: data.status, msg: data.msg } });
+      });
+  };
 
   updateQueries = ({ target: { name, value } }) => {
     this.setState({ [name]: value });

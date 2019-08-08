@@ -28,7 +28,6 @@ export const getArticlesWithParams = ({
     .then(({ data: { articles } }) => {
       return articles;
     })
-    .catch(console.dir);
 };
 
 export const voteOnComment = (comment_id, numberToIncrementBy) => {
@@ -63,7 +62,6 @@ export const postNewComment = (username, comment, article_id) => {
     .then(({ data: { comment } }) => {
       return comment;
     })
-    .catch(console.dir);
 };
 
 export const deleteComment = comment_id => {

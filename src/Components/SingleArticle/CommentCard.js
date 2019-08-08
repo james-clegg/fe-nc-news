@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import * as API from "../../api";
 import styles from "./comments.module.css";
+import ErrorPage from "../ErrorPage";
 
 class CommentCard extends Component {
   state = {
-    incrementedVotes: 0
+    incrementedVotes: 0,
+    error: null
   };
 
   render() {
     const { author, body, created_at } = this.props.comment;
     let { votes } = this.props.comment;
-
+    if (this.state.error) return <ErrorPage error={this.state.error} />;
     return (
       <li className={styles.commentItem}>
         <p> Author: {author}</p>
@@ -49,7 +51,9 @@ class CommentCard extends Component {
   deleteComment = () => {
     const { comment_id, author } = this.props.comment;
     if (this.props.user === author) {
-      API.deleteComment(comment_id);
+      API.deleteComment(comment_id).catch(({ response: { data } }) => {
+        this.setState({ error: { status: data.status, msg: data.msg } });
+      });
       this.props.removeDeletedCommentFromArray(comment_id);
     } else {
       this.props.refuseToDelete();
