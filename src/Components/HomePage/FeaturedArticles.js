@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as API from "../../api";
 import ArticleCard from "../ListOfAllArticles/ArticleCard";
+import styles from "./HomePage.module.css";
 
 class FeaturedArticles extends Component {
   state = {
@@ -13,7 +14,7 @@ class FeaturedArticles extends Component {
     if (isLoading) return <p>Loading articles...</p>;
     return (
       <>
-        <p className="listOfArticlesHeader">Featured articles:</p>
+        <p className={styles.header}>Featured articles:</p>
         <ul>
           {articles.map(article => {
             return <ArticleCard article={article} key={article.article_id} />;
