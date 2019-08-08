@@ -3,7 +3,7 @@ import React from "react";
 const QuerySelectors = props => {
   return (
     <>
-      <label>
+      <label className='querySelectorLabel'>
         Sort_by:
         <select name={"sort_by"} onChange={props.updateQueries}>
           <option value="created_at">Date posted</option>
@@ -11,14 +11,14 @@ const QuerySelectors = props => {
           <option value="comment_count">Number of comments</option>
         </select>
       </label>
-      <label>
+      <label className='querySelectorLabel'>
         Order:
         <select name={"order"} onChange={props.updateQueries}>
           <option value="desc">Descending</option>
           <option value="asc">Ascending</option>
         </select>
       </label>
-      <label>
+      <label className='querySelectorLabel'>
         Filter by topic:
         <select name={"filterByTopic"} onChange={props.updateQueries}>
           <option value="">No filter</option>

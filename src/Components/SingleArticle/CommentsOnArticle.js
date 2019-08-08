@@ -18,10 +18,10 @@ class CommentsOnArticle extends Component {
           <>
             <h2>Comments</h2>
             {this.state.failedDelete && (
-              <p>Could not delete comment as current user is not the author</p>
+              <p className='commentFailureMessage'>Could not delete comment as current user is not the author</p>
             )}
-            {this.state.didDelete && <p>Comment was successfully deleted!</p>}
-            <ul>
+            {this.state.didDelete && <p className='commentSuccessMessage'>Comment was successfully deleted!</p>}
+            <ul className='listOfComments'>
               {this.state.comments.map(comment => {
                 return (
                   <CommentCard

@@ -13,15 +13,14 @@ const ArticleCard = props => {
   } = props.article;
   return (
     <li className="articleCard">
-      <p >Title: {title}</p>
+      <Link to={`/articles/${article_id}`}>
+        <h3 className='articleCardHeader'>{title}</h3>
+      </Link>
       <p>Author: {author}</p>
       <p>Topic: {topic}</p>
       <p>Comment count: {comment_count}</p>
       <p>Votes: {votes}</p>
       <p>Date posted: {created_at.slice(0, 9)}</p>
-      <p>
-        <Link to={`/articles/${article_id}`}>View full article</Link>
-      </p>
     </li>
   );
 };

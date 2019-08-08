@@ -12,7 +12,6 @@ class SingleArticle extends Component {
       author,
       title,
       body,
-      topic,
       created_at,
       comment_count
     } = this.state.article;
@@ -22,12 +21,17 @@ class SingleArticle extends Component {
         {this.state.article ? (
           <section className="SingleArticle">
             <h2>{title}</h2>
-            <p>By: {author}</p>
-            <p>Topic: {topic}</p>
-            <p> {body}</p>
-            <p>Votes: {(votes += this.state.incrementedVotes)}</p>
-            <p>Created on: {created_at.slice(0, 9)}</p>
-            <p>Number of comments: {comment_count}</p>
+            <p className="bodyOfArticle"> {body}</p>
+            <p className="votesOnArticle">
+              Votes: {(votes += this.state.incrementedVotes)}
+            </p>
+            <p className="extraInfoOnArticle">By: {author}</p>
+            <p className="extraInfoOnArticle">
+              Created on: {created_at.slice(0, 9)}
+            </p>
+            <p className="extraInfoOnArticle">
+              Number of comments: {comment_count}
+            </p>
             <button
               onClick={() => this.articleVoter(this.state.incrementedVotes, 1)}
               disabled={this.state.incrementedVotes > 0}
