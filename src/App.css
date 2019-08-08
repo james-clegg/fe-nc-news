@@ -1,5 +1,6 @@
 .navbar {
   display: flex;
+  padding-top: 20px;
   justify-content: center;
 }
 
@@ -11,11 +12,6 @@
   text-align: center;
   font-size: 20px;
   background-color: peachpuff;
-}
-
-.WebsiteHeader {
-  text-align: center;
-  font-size: 50px;
 }
 
 .centre {
@@ -31,20 +27,25 @@
   margin: 10px;
   list-style-type: none;
   font-size: 20px;
+  font-family: "Gentium Basic", helvetica;
 }
 
 .listOfArticlesHeader {
   text-align: center;
+  font-family: "Gentium Basic", helvetica;
+
   font-size: 35px;
 }
 
 .WelcomeMessage {
   text-align: center;
   font-size: 40px;
+  font-family: "Gentium Basic", helvetica;
 }
 
 .SingleArticle {
   font-size: 20px;
+  font-family: "Gentium Basic", helvetica;
 }
 
 .commentItem {
@@ -52,9 +53,83 @@
   margin: 10px;
   padding: 1px;
   list-style-type: none;
+  font-family: "Gentium Basic", helvetica;
 }
 
-.smallHeaderNorthcodersN {
-  height: 100px;
-  width: 100px;
+.websiteHeader {
+  text-align: center;
+  font-family: "Gentium Basic", helvetica;
+}
+
+/*----------------------------------------------- BurgerMenu Styling --------------------------------------------------------------*/
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #000000;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #ba0c2f;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #a2caad;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  color: #ba0c2f;
+  font-family: "Gentium Basic", helvetica;
+  font-size: 30px;
+  padding: 10px;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(250, 248, 248, 0.3);
 }

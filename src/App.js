@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import "./App.css";
 import { Router } from "@reach/router";
 import WebsiteHeader from "./Components/Website-Header";
-import NavBar from "./Components/NavBar";
 import ListOfAllArticles from "./Components/ListOfAllArticles/ListOfAllArticles";
 import HomePage from "./Components/HomePage/HomePage";
-import SingleArticlePage from './Components/SingleArticle/SingleArticlePage';
-import FeaturedArticles from './Components/FeaturedArticles'
+import SingleArticlePage from "./Components/SingleArticle/SingleArticlePage";
+import FeaturedArticles from "./Components/FeaturedArticles";
+import BurgerMenu from "./Components/BurgerMenu";
+import NCicon from "./Components/NCicon";
 
 class App extends Component {
   state = {
@@ -17,12 +18,16 @@ class App extends Component {
     return (
       <div className="App">
         <WebsiteHeader />
-        <NavBar />
+        <BurgerMenu />
+        <NCicon />
         <Router>
           <HomePage path="/" user={this.state.user} />
           <ListOfAllArticles path="/allArticles" />
-          <SingleArticlePage path="/articles/:articleID" user={this.state.user}/>
-          <FeaturedArticles path='/featuredArticles' />
+          <SingleArticlePage
+            path="/articles/:articleID"
+            user={this.state.user}
+          />
+          <FeaturedArticles path="/featuredArticles" />
         </Router>
       </div>
     );

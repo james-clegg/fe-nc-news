@@ -1,14 +1,8 @@
 import React from "react";
 import WelcomeMessage from "./WelcomeMessage";
-import NCicon from "./Logo";
 
 const HomePage = props => {
-  return (
-    <>
-      <WelcomeMessage user={props.user}/>
-      <NCicon />
-    </>
-  );
+  return <WelcomeMessage user={props.user} />;
 };
 
 export default HomePage;
