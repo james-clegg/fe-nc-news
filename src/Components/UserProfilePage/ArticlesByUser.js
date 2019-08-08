@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import * as API from "../../api";
 import ArticleCard from "../ListOfAllArticles/ArticleCard";
 import ErrorPage from "../ErrorPage";
+import styles from "./UserProfilePage.module.css";
 
 class ArticlesByUser extends Component {
   state = {
@@ -15,13 +16,11 @@ class ArticlesByUser extends Component {
     if (isLoading) return <p>Loading articles...</p>;
     if (error) return <ErrorPage error={error} />;
     return (
-      <div>
-        <ul>
-          {articles.map(article => {
-            return <ArticleCard article={article} key={article.article_id} />;
-          })}
-        </ul>
-      </div>
+      <section className={styles.articleListFlex}>
+        {articles.map(article => {
+          return <ArticleCard article={article} key={article.article_id} />;
+        })}
+      </section>
     );
   }
 

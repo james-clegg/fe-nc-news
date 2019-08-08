@@ -1,7 +1,14 @@
 .header {
   text-align: center;
   font-size: 40px;
-  font-family: "Gentium Basic", helvetica;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(102, 151, 115);
 }
 
-
+.featuredListFlex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: center;
+}

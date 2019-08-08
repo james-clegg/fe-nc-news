@@ -1,7 +1,6 @@
-
-
 .querySelectorLabel {
-  font-family: "Gentium Basic", helvetica;
+  font-family: "Open Sans", sans-serif;
   font-size: 20px;
   padding-right: 20px;
+  margin-bottom: 30px
 }

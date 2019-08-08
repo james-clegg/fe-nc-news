@@ -1,6 +1,7 @@
 .commentSuccessMessage {
   font-size: 30px;
-  color: green}
+  color: green;
+}
 
 .commentFailureMessage {
   font-size: 30px;
@@ -10,13 +11,18 @@
 .commentItem {
   margin: 25px;
   padding: 10px;
-  box-shadow: 0 10px 12px 0 hsla(0, 0%, 0%, 0.2);
+  border: 5px solid rgb(102, 151, 115);
+  color: rgb(102, 151, 115);
   list-style-type: none;
-  font-family: "Gentium Basic", helvetica;
+  font-family: "Open Sans", sans-serif;
 }
 
 .listOfComments {
   margin: 0;
   padding: 0;
   border: 0;
+}
+
+.textOnCommentsPage {
+  color: rgb(102, 151, 115);
 }

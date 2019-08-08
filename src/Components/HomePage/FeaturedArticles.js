@@ -18,11 +18,11 @@ class FeaturedArticles extends Component {
     return (
       <>
         <p className={styles.header}>Featured articles:</p>
-        <ul>
+        <section className={styles.featuredListFlex}>
           {articles.map(article => {
             return <ArticleCard article={article} key={article.article_id} />;
           })}
-        </ul>
+        </section>
       </>
     );
   }

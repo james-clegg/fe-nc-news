@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styles from "./comments.module.css";
 
 class PostNewCommentForm extends Component {
   state = {
@@ -8,12 +9,12 @@ class PostNewCommentForm extends Component {
   render() {
     return (
       <>
-        <h3>Post a new comment:</h3>
+        <h3 className={styles.textOnCommentsPage}>Post a new comment:</h3>
         <form onSubmit={this.handleSubmit}>
-          Comment:{" "}
+          <p className={styles.textOnCommentsPage}>Comment: </p>
           <textarea
-            rows='10'
-            cols='80'
+            rows="10"
+            cols="80"
             name="comment"
             onChange={this.handleChange}
             value={this.state.comment}
@@ -28,7 +29,7 @@ class PostNewCommentForm extends Component {
     event.preventDefault();
     const { comment } = this.state;
     this.props.addPostedComment(comment);
-    this.setState({comment: ''})
+    this.setState({ comment: "" });
   };
 
   handleChange = ({ target: { name, value } }) => {

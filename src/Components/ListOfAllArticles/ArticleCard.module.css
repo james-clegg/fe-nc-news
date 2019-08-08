@@ -1,14 +1,22 @@
-
-
 .articleCard {
   margin: 25px;
-  padding: 10px;
-  box-shadow: 0 10px 12px 0 hsla(0, 0%, 0%, 0.2);
+  margin-top: 0;
+  padding-bottom: 10px;
+  padding-top: 0;
+  border: 10px solid #a2caad;
   list-style-type: none;
   font-size: 20px;
-  font-family: "Gentium Basic", helvetica;
+  font-family: "Open Sans", sans-serif;
+  height: 450px;
+  color: rgb(102, 151, 115);
 }
 
 .articleCardHeader {
+  text-decoration: none;
+  margin: 0;
   text-emphasis: bold;
+  background-color: #ba0c2f;
+  color: white;
+  text-align: center;
+  width: 250px;
 }

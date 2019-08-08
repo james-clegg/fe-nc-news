@@ -19,7 +19,7 @@ class CommentsOnArticle extends Component {
     if (this.state.error) return <ErrorPage error={this.state.error} />;
     return (
       <>
-        <h2>Comments</h2>
+        <h2 className={styles.textOnCommentsPage}>Comments</h2>
         {this.state.failedDelete && (
           <p className={styles.commentFailureMessage}>
             Could not delete comment as current user is not the author

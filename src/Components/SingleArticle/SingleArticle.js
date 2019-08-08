@@ -25,7 +25,7 @@ class SingleArticle extends Component {
     return (
       <>
         <section className={styles.SingleArticle}>
-          <h2>{title}</h2>
+          <h2 className={styles.SingleArticleTitle}>{title}</h2>
           <p className={styles.bodyOfArticle}> {body}</p>
           <p className={styles.votesOnArticle}>
             Votes: {(votes += this.state.incrementedVotes)}

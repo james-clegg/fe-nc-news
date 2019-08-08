@@ -1,5 +1,13 @@
 .listOfArticlesHeader {
   text-align: center;
-  font-family: "Gentium Basic", helvetica;
-  font-size: 35px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 50px;
+  color: rgb(102, 151, 115);
+}
+
+.articleListFlex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
 }

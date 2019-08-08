@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
-import styles from './ArticleCard.module.css'
+import styles from "./ArticleCard.module.css";
 
 const ArticleCard = props => {
   const {
@@ -13,16 +13,18 @@ const ArticleCard = props => {
     votes
   } = props.article;
   return (
-    <li className={styles.articleCard}>
-      <Link to={`/articles/${article_id}`}>
-        <h3 className={styles.articleCardHeader}>{title}</h3>
-      </Link>
-      <p>Author: {author}</p>
-      <p>Topic: {topic}</p>
-      <p>Comment count: {comment_count}</p>
-      <p>Votes: {votes}</p>
-      <p>Date posted: {created_at.slice(0, 9)}</p>
-    </li>
+    <section className={styles.articleCardGrid}>
+      <li className={styles.articleCard}>
+        <Link to={`/articles/${article_id}`}>
+          <h3 className={styles.articleCardHeader}>{title}</h3>
+        </Link>
+        <p>Author: {author}</p>
+        <p>Topic: {topic}</p>
+        <p>Comment count: {comment_count}</p>
+        <p>Votes: {votes}</p>
+        <p>Date posted: {created_at.slice(0, 9)}</p>
+      </li>
+    </section>
   );
 };
 

@@ -20,11 +20,11 @@ class ListOfAllArticles extends Component {
       <>
         <p className={styles.listOfArticlesHeader}>Articles</p>
         <QuerySelectors updateQueries={this.updateQueries} />
-        <ul>
+        <section className={styles.articleListFlex}>
           {this.state.articles.map(article => {
             return <ArticleCard article={article} key={article.article_id} />;
           })}
-        </ul>
+        </section>
       </>
     );
   }

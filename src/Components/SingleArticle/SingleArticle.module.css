@@ -1,18 +1,23 @@
 .bodyOfArticle {
-  color: #111010;
+  color: rgb(102, 151, 115);
   font-weight: bold;
 }
 
 .extraInfoOnArticle {
-  color: #4b4949;
+  color: rgb(102, 151, 115);
 }
 
 .votesOnArticle {
-  color: #111010;
+  color: rgb(102, 151, 115);
   font-size: 25px;
 }
 
 .SingleArticle {
   font-size: 20px;
-  font-family: "Gentium Basic", helvetica;
+  font-family: "Open Sans", sans-serif;
+}
+
+.SingleArticleTitle {
+    color: rgb(102, 151, 115)
+
 }
