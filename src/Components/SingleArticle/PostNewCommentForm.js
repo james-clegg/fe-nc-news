@@ -18,6 +18,7 @@ class PostNewCommentForm extends Component {
             name="comment"
             onChange={this.handleChange}
             value={this.state.comment}
+            required
           />
           <button>Submit!</button>
         </form>

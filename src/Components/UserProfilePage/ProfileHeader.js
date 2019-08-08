@@ -34,9 +34,9 @@ class ProfileHeader extends Component {
   getInfoAboutUser = () => {
     API.getUserInfo(this.props.username)
       .then(user => this.setState({ user, isLoading: false }))
-      .catch(({ response: { data } }) => {
+      .catch(({ response: { data, status } }) => {
         this.setState({
-          error: { status: data.status, msg: data.msg },
+          error: { status: status, msg: data.msg },
           isLoading: false
         });
       });

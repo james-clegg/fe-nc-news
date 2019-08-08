@@ -34,9 +34,9 @@ class ArticlesByUser extends Component {
       .then(articles => {
         this.setState({ articles, isLoading: false });
       })
-      .catch(({ response: { data } }) => {
+      .catch(({ response: { data, status } }) => {
         this.setState({
-          error: { status: data.status, msg: data.msg },
+          error: { status: status, msg: data.msg },
           isLoading: false
         });
       });

@@ -51,8 +51,10 @@ class CommentCard extends Component {
   deleteComment = () => {
     const { comment_id, author } = this.props.comment;
     if (this.props.user === author) {
-      API.deleteComment(comment_id).catch(({ response: { data } }) => {
-        this.setState({ error: { status: data.status, msg: data.msg } });
+      API.deleteComment(comment_id).catch(({ response: { data, status } }) => {
+        this.setState({
+          error: { status: status, msg: data.msg }
+        });
       });
       this.props.removeDeletedCommentFromArray(comment_id);
     } else {

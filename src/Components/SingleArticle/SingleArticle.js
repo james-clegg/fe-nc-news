@@ -61,22 +61,21 @@ class SingleArticle extends Component {
   }
 
   componentDidMount() {
-    this.getTheArticle()
+    this.getTheArticle();
   }
-  
+
   getTheArticle = () => {
     API.getArticleByArticleID(this.props.id)
       .then(article => {
         this.setState({ article, isLoading: false });
       })
-      .catch(({ response: { data } }) => {
+      .catch(({ response: { data, status } }) => {
         this.setState({
-          error: { status: data.status, msg: data.msg },
+          error: { status: status, msg: data.msg },
           isLoading: false
         });
       });
-
-  }
+  };
 
   articleVoter = (currentVotes, numberToIncrementBy) => {
     API.voteOnArticle(this.props.id, numberToIncrementBy);

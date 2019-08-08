@@ -37,8 +37,12 @@ class FeaturedArticles extends Component {
       .then(articles => {
         this.setState({ articles: articles.slice(0, 3), isLoading: false });
       })
-      .catch(({response: {data}}) => {
-        this.setState({ error: {status: data.status, msg: data.msg}, isLoading: false})});
+      .catch(({ response: { data, status } }) => {
+        this.setState({
+          error: { status: status, msg: data.msg },
+          isLoading: false
+        });
+      });
   };
 }
 

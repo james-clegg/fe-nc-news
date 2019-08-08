@@ -30,14 +30,16 @@ class ListOfAllArticles extends Component {
   }
 
   componentDidMount() {
-    this.getAllTheArticles()
+    this.getAllTheArticles();
   }
 
   getAllTheArticles = () => {
     API.getAllArticles()
       .then(articles => this.setState({ articles }))
-      .catch(({ response: { data } }) => {
-        this.setState({ error: { status: data.status, msg: data.msg } });
+      .catch(({ response: { data, status } }) => {
+        this.setState({
+          error: { status: status, msg: data.msg }
+        });
       });
   };
 
