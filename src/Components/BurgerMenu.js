@@ -11,7 +11,11 @@ class BurgerMenu extends Component {
         <a id="All articles" className="menu-item" href="/allArticles">
           All articles
         </a>
-        <a id="My Profile" className="menu-item" href="/myProfile">
+        <a
+          id="My Profile"
+          className="menu-item"
+          href={`/users/${this.props.username}`}
+        >
           My profile
         </a>
       </Menu>

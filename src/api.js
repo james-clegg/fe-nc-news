@@ -64,3 +64,9 @@ export const deleteComment = comment_id => {
     return response;
   });
 };
+
+export const getUserInfo = username => {
+  return request.get(`/users/${username}`).then(({ data: { user } }) => {
+    return user;
+  });
+};

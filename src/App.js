@@ -5,9 +5,9 @@ import WebsiteHeader from "./Components/Website-Header";
 import ListOfAllArticles from "./Components/ListOfAllArticles/ListOfAllArticles";
 import HomePage from "./Components/HomePage/HomePage";
 import SingleArticlePage from "./Components/SingleArticle/SingleArticlePage";
-import FeaturedArticles from "./Components/FeaturedArticles";
 import BurgerMenu from "./Components/BurgerMenu";
 import NCicon from "./Components/NCicon";
+import UserProfilePage from "./Components/UserProfilePage/UserProfilePage";
 
 class App extends Component {
   state = {
@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <div className="App">
         <WebsiteHeader />
-        <BurgerMenu />
+        <BurgerMenu username={this.state.user} />
         <NCicon />
         <Router>
           <HomePage path="/" user={this.state.user} />
@@ -27,7 +27,7 @@ class App extends Component {
             path="/articles/:articleID"
             user={this.state.user}
           />
-          <FeaturedArticles path="/featuredArticles" />
+          <UserProfilePage path={`/users/:username`} />
         </Router>
       </div>
     );
