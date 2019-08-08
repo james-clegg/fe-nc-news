@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
 import QuerySelectors from "./QuerySelectors";
 import * as API from "../../api";
+import styles from "./ListOfArticles.module.css";
 
 class ListOfAllArticles extends Component {
   state = {
@@ -14,7 +15,7 @@ class ListOfAllArticles extends Component {
   render() {
     return (
       <>
-        <h2 className="listOfArticlesHeader">Articles</h2>
+        <p className={styles.listOfArticlesHeader}>Articles</p>
         <QuerySelectors updateQueries={this.updateQueries} />
         <ul>
           {this.state.articles.map(article => {
@@ -40,7 +41,7 @@ class ListOfAllArticles extends Component {
       prevState.filterByTopic !== filterByTopic ||
       prevState.order !== order
     ) {
-      const queryObj = {sort_by, order, filterByTopic};
+      const queryObj = { sort_by, order, filterByTopic };
       API.getArticlesWithParams(queryObj).then(articles =>
         this.setState({ articles })
       );

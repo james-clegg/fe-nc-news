@@ -13,7 +13,7 @@ class FeaturedArticles extends Component {
     if (isLoading) return <p>Loading articles...</p>;
     return (
       <>
-        <p className="WelcomeMessage">Featured articles:</p>
+        <p className="listOfArticlesHeader">Featured articles:</p>
         <ul>
           {articles.map(article => {
             return <ArticleCard article={article} key={article.article_id} />;

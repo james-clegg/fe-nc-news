@@ -1,9 +1,10 @@
 import React from "react";
+import styles from './QuerySelectors.module.css'
 
 const QuerySelectors = props => {
   return (
     <>
-      <label className='querySelectorLabel'>
+      <label className={styles.querySelectorLabel}>
         Sort_by:
         <select name={"sort_by"} onChange={props.updateQueries}>
           <option value="created_at">Date posted</option>
@@ -11,14 +12,14 @@ const QuerySelectors = props => {
           <option value="comment_count">Number of comments</option>
         </select>
       </label>
-      <label className='querySelectorLabel'>
+      <label className={styles.querySelectorLabel}>
         Order:
         <select name={"order"} onChange={props.updateQueries}>
           <option value="desc">Descending</option>
           <option value="asc">Ascending</option>
         </select>
       </label>
-      <label className='querySelectorLabel'>
+      <label className={styles.querySelectorLabel}>
         Filter by topic:
         <select name={"filterByTopic"} onChange={props.updateQueries}>
           <option value="">No filter</option>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
+import styles from './ArticleCard.module.css'
 
 const ArticleCard = props => {
   const {
@@ -12,9 +13,9 @@ const ArticleCard = props => {
     votes
   } = props.article;
   return (
-    <li className="articleCard">
+    <li className={styles.articleCard}>
       <Link to={`/articles/${article_id}`}>
-        <h3 className='articleCardHeader'>{title}</h3>
+        <h3 className={styles.articleCardHeader}>{title}</h3>
       </Link>
       <p>Author: {author}</p>
       <p>Topic: {topic}</p>

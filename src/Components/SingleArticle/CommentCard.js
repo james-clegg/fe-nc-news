@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as API from "../../api";
+import styles from "./comments.module.css";
 
 class CommentCard extends Component {
   state = {
@@ -11,7 +12,7 @@ class CommentCard extends Component {
     let { votes } = this.props.comment;
 
     return (
-      <li className="commentItem">
+      <li className={styles.commentItem}>
         <p> Author: {author}</p>
         <p>{body}</p>
         <p>Created on: {created_at.slice(0, 9)}</p>

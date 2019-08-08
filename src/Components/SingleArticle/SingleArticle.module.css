@@ -1,0 +1,18 @@
+.bodyOfArticle {
+  color: #111010;
+  font-weight: bold;
+}
+
+.extraInfoOnArticle {
+  color: #4b4949;
+}
+
+.votesOnArticle {
+  color: #111010;
+  font-size: 25px;
+}
+
+.SingleArticle {
+  font-size: 20px;
+  font-family: "Gentium Basic", helvetica;
+}

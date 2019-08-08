@@ -2,7 +2,7 @@ import React from "react";
 
 const WelcomeMessage = props => {
   return (
-    <p className="WelcomeMessage">Welcome to Northcoders News, {props.user}!</p>
+    <p className="listOfArticlesHeader">Welcome to Northcoders News, {props.user}!</p>
   );
 };
 

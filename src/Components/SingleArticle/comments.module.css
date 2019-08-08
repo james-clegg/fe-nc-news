@@ -1,0 +1,23 @@
+.commentSuccessMessage {
+  font-size: 30px;
+  background-color: rgb(135, 228, 135);
+}
+
+.commentFailureMessage {
+  font-size: 30px;
+  background-color: #e97c92;
+}
+
+.commentItem {
+  margin: 25px;
+  padding: 10px;
+  box-shadow: 0 10px 12px 0 hsla(0, 0%, 0%, 0.2);
+  list-style-type: none;
+  font-family: "Gentium Basic", helvetica;
+}
+
+.listOfComments {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

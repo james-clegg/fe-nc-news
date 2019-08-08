@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as API from "../../api";
+import styles from "./SingleArticle.module.css";
 
 class SingleArticle extends Component {
   state = {
@@ -19,17 +20,17 @@ class SingleArticle extends Component {
     return (
       <>
         {this.state.article ? (
-          <section className="SingleArticle">
+          <section className={styles.SingleArticle}>
             <h2>{title}</h2>
-            <p className="bodyOfArticle"> {body}</p>
-            <p className="votesOnArticle">
+            <p className={styles.bodyOfArticle}> {body}</p>
+            <p className={styles.votesOnArticle}>
               Votes: {(votes += this.state.incrementedVotes)}
             </p>
-            <p className="extraInfoOnArticle">By: {author}</p>
-            <p className="extraInfoOnArticle">
+            <p className={styles.extraInfoOnArticle}>By: {author}</p>
+            <p className={styles.extraInfoOnArticle}>
               Created on: {created_at.slice(0, 9)}
             </p>
-            <p className="extraInfoOnArticle">
+            <p className={styles.extraInfoOnArticle}>
               Number of comments: {comment_count}
             </p>
             <button

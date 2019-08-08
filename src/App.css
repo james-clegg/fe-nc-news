@@ -1,77 +1,7 @@
-.northcodersHeart {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 200px;
-  height: 200px;
-}
 
-.commentSuccessMessage {
-  font-size: 30px;
-  background-color: rgb(135, 228, 135);
-}
-
-.commentFailureMessage {
-  font-size: 30px;
-  background-color: #e97c92;
-}
-
-.querySelectorLabel {
-  font-family: "Gentium Basic", helvetica;
-  font-size: 20px;
-  padding-right: 20px;
-}
-
-.bodyOfArticle {
-  color: #111010;
-  font-weight: bold;
-}
-
-.extraInfoOnArticle {
-  color: #4b4949;
-}
-
-.votesOnArticle {
-  color: #111010;
-  font-size: 25px;
-}
-
-.articleCard {
-  margin: 25px;
-  padding: 10px;
-  box-shadow: 0 10px 12px 0 hsla(0, 0%, 0%, 0.2);
-  list-style-type: none;
-  font-size: 20px;
-  font-family: "Gentium Basic", helvetica;
-}
-
-.articleCardHeader {
-  text-emphasis: bold;
-}
-
-.listOfArticlesHeader {
-  text-align: center;
-  font-family: "Gentium Basic", helvetica;
-
-  font-size: 35px;
-}
-
-.WelcomeMessage {
+.header {
   text-align: center;
   font-size: 40px;
-  font-family: "Gentium Basic", helvetica;
-}
-
-.SingleArticle {
-  font-size: 20px;
-  font-family: "Gentium Basic", helvetica;
-}
-
-.commentItem {
-  margin: 25px;
-  padding: 10px;
-  box-shadow: 0 10px 12px 0 hsla(0, 0%, 0%, 0.2);
-  list-style-type: none;
   font-family: "Gentium Basic", helvetica;
 }
 
@@ -82,29 +12,7 @@
   margin-bottom: 5px;
 }
 
-.userProfileHeader {
-  text-align: center;
-  font-family: "Gentium Basic", helvetica;
-  font-size: 50px;
-}
 
-.listOfComments {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-.userProfileFullName {
-  text-align: center;
-  font-family: "Gentium Basic", helvetica;
-  font-size: 20px;
-}
-
-.userProfileImage {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 /*----------------------------------------------- BurgerMenu Styling --------------------------------------------------------------*/
 

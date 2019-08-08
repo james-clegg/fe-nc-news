@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as API from "../../api";
+import styles from "./UserProfilePage.module.css";
 
 class ProfileHeader extends Component {
   state = {
@@ -12,10 +13,10 @@ class ProfileHeader extends Component {
     if (isLoading) return <p>Loading user...</p>;
     return (
       <div>
-        <h1 className="userProfileHeader">{user.username}</h1>
-        <p className="userProfileFullName">Full name: {user.name}</p>
+        <h1 className={styles.userProfileHeader}>{user.username}</h1>
+        <p className={styles.userProfileFullName}>Full name: {user.name}</p>
         <img
-          className="userProfileImage"
+          className={styles.userProfileImage}
           src={user.avatar_url}
           alt={user.username}
         />

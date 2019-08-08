@@ -1,0 +1,17 @@
+.userProfileHeader {
+  text-align: center;
+  font-family: "Gentium Basic", helvetica;
+  font-size: 50px;
+}
+
+.userProfileFullName {
+  text-align: center;
+  font-family: "Gentium Basic", helvetica;
+  font-size: 20px;
+}
+
+.userProfileImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
