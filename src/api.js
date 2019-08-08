@@ -10,18 +10,25 @@ export const getAllArticles = () => {
   });
 };
 
-export const getArticlesWithParams = (sort_by, order, topic) => {
+export const getArticlesWithParams = ({
+  sort_by,
+  order,
+  filterByTopic,
+  author
+}) => {
   return request
     .get("/articles", {
       params: {
         sort_by: sort_by,
         order: order,
-        topic: topic
+        topic: filterByTopic,
+        author: author
       }
     })
     .then(({ data: { articles } }) => {
       return articles;
-    });
+    })
+    .catch(console.dir);
 };
 
 export const voteOnComment = (comment_id, numberToIncrementBy) => {

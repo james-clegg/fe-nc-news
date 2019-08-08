@@ -6,7 +6,7 @@ const UserProfilePage = (props) => {
   return (
     <>
       <ProfileHeader username={props.username}/>
-      <ArticlesByUser/>
+      <ArticlesByUser username={props.username}/>
     </>
   );
 };

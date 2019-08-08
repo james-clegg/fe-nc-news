@@ -40,7 +40,8 @@ class ListOfAllArticles extends Component {
       prevState.filterByTopic !== filterByTopic ||
       prevState.order !== order
     ) {
-      API.getArticlesWithParams(sort_by, order, filterByTopic).then(articles =>
+      const queryObj = {sort_by, order, filterByTopic};
+      API.getArticlesWithParams(queryObj).then(articles =>
         this.setState({ articles })
       );
     }
