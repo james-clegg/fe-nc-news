@@ -12,9 +12,13 @@ class ProfileHeader extends Component {
     if (isLoading) return <p>Loading user...</p>;
     return (
       <div>
-        <p>{user.username}</p>
-        <p>{user.name}</p>
-        <img src={user.avatar_url} alt={user.username} />
+        <h1 className="userProfileHeader">{user.username}</h1>
+        <p className="userProfileFullName">Full name: {user.name}</p>
+        <img
+          className="userProfileImage"
+          src={user.avatar_url}
+          alt={user.username}
+        />
       </div>
     );
   }
