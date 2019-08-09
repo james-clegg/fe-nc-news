@@ -10,7 +10,6 @@ class CommentsOnArticle extends Component {
     comments: "",
     isLoading: true,
     didDelete: false,
-    failedDelete: false,
     error: null
   };
 
@@ -20,16 +19,16 @@ class CommentsOnArticle extends Component {
     return (
       <>
         <h2 className={styles.textOnCommentsPage}>Comments</h2>
-        {this.state.failedDelete && (
-          <p className={styles.commentFailureMessage}>
-            Could not delete comment as current user is not the author
-          </p>
-        )}
+
         {this.state.didDelete && (
           <p className={styles.commentSuccessMessage}>
             Comment was successfully deleted!
           </p>
         )}
+        <PostNewCommentForm
+          addPostedComment={this.addPostedComment}
+          user={this.props.user}
+        />
         <ul className={styles.listOfComments}>
           {this.state.comments.map(comment => {
             return (
@@ -40,16 +39,11 @@ class CommentsOnArticle extends Component {
                 removeDeletedCommentFromArray={
                   this.removeDeletedCommentFromArray
                 }
-                refuseToDelete={this.refuseToDelete}
                 user={this.props.user}
               />
             );
           })}
         </ul>
-        <PostNewCommentForm
-          addPostedComment={this.addPostedComment}
-          user={this.props.user}
-        />
       </>
     );
   }
@@ -79,7 +73,7 @@ class CommentsOnArticle extends Component {
       comment => {
         this.setState(currentState => {
           const comments = [comment, ...currentState.comments];
-          return { comments, didDelete: false, failedDelete: false };
+          return { comments, didDelete: false };
         });
       }
     );
@@ -92,16 +86,8 @@ class CommentsOnArticle extends Component {
       });
       return {
         comments: newComments,
-        didDelete: true,
-        failedDelete: false
+        didDelete: true
       };
-    });
-  };
-
-  refuseToDelete = () => {
-    this.setState({
-      failedDelete: true,
-      didDelete: false
     });
   };
 }

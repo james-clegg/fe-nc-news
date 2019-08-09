@@ -2,6 +2,13 @@
   background-color: #f6fcf7;
 }
 
+.headerFlex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 20%;
+}
+
 .ErrorMessage {
   color: red;
   font-size: 40px;
@@ -15,6 +22,11 @@
   margin-bottom: 5px;
   margin-top: 0;
   color: rgb(102, 151, 115);
+  align-content: center;
+}
+
+.headerIcon {
+  justify-content: flex-end;
 }
 
 /*----------------------------------------------- BurgerMenu Styling --------------------------------------------------------------*/

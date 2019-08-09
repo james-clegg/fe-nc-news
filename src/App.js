@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <WebsiteHeader />
+        <WebsiteHeader user={this.state.user} />
         <BurgerMenu username={this.state.user} />
         <NCicon />
         <Router>

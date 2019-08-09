@@ -37,7 +37,9 @@ class CommentCard extends Component {
             ⬇️
           </span>
         </button>
-        <button onClick={this.deleteComment}>Delete comment</button>
+        {this.props.user === author && (
+          <button onClick={this.deleteComment}>Delete comment</button>
+        )}
       </li>
     );
   }
@@ -49,17 +51,13 @@ class CommentCard extends Component {
   };
 
   deleteComment = () => {
-    const { comment_id, author } = this.props.comment;
-    if (this.props.user === author) {
-      API.deleteComment(comment_id).catch(({ response: { data, status } }) => {
-        this.setState({
-          error: { status: status, msg: data.msg }
-        });
+    const { comment_id } = this.props.comment;
+    API.deleteComment(comment_id).catch(({ response: { data, status } }) => {
+      this.setState({
+        error: { status: status, msg: data.msg }
       });
-      this.props.removeDeletedCommentFromArray(comment_id);
-    } else {
-      this.props.refuseToDelete();
-    }
+    });
+    this.props.removeDeletedCommentFromArray(comment_id);
   };
 }
 
