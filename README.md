@@ -53,8 +53,8 @@ And a hosted version can be found [here.](https://jc-nc-news.herokuapp.com/api/)
 
 ## Author
 
-### [James Clegg](<[https://github.com/james-clegg/](https://github.com/james-clegg/)>)
+### [James Clegg](https://github.com/james-clegg/)
 
 ## Acknowledgements
 
-[Northcoders](northcoders.com)
+[Northcoders](https://northcoders.com)
