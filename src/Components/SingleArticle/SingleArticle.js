@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import * as API from "../../api";
 import styles from "./SingleArticle.module.css";
 import ErrorPage from "../ErrorPage";
+import Voter from "./Voter";
 
 class SingleArticle extends Component {
   state = {
     article: "",
-    incrementedVotes: 0,
+    currentVotes: 0,
     error: null,
     isLoading: true
   };
@@ -28,7 +29,7 @@ class SingleArticle extends Component {
           <h2 className={styles.SingleArticleTitle}>{title}</h2>
           <p className={styles.bodyOfArticle}> {body}</p>
           <p className={styles.votesOnArticle}>
-            Votes: {(votes += this.state.incrementedVotes)}
+            Votes: {(votes += this.state.currentVotes)}
           </p>
           <p className={styles.extraInfoOnArticle}>By: {author}</p>
           <p className={styles.extraInfoOnArticle}>
@@ -37,20 +38,11 @@ class SingleArticle extends Component {
           <p className={styles.extraInfoOnArticle}>
             Number of comments: {comment_count}
           </p>
-          <button
-            className={styles.voteButton}
-            onClick={() => this.articleVoter(this.state.incrementedVotes, 1)}
-            disabled={this.state.incrementedVotes > 0}
-          >
-            <p className={styles.buttonText}>Upvote article!</p>
-          </button>
-          <button
-            className={styles.voteButton}
-            onClick={() => this.articleVoter(this.state.incrementedVotes, -1)}
-            disabled={this.state.incrementedVotes < 0}
-          >
-            <p className={styles.buttonText}>Downvote article!</p>
-          </button>
+          <Voter
+            article_id={this.props.id}
+            currentVotes={this.state.currentVotes}
+            setVotes={this.setVotes}
+          />
         </section>
       </>
     );
@@ -73,10 +65,8 @@ class SingleArticle extends Component {
       });
   };
 
-  articleVoter = (currentVotes, numberToIncrementBy) => {
-    API.voteOnArticle(this.props.id, numberToIncrementBy);
-    currentVotes += numberToIncrementBy;
-    this.setState({ incrementedVotes: currentVotes });
+  setVotes = currentVotes => {
+    this.setState({ currentVotes });
   };
 }
 

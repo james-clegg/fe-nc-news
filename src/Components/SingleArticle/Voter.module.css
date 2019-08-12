@@ -1,0 +1,9 @@
+.buttonStyle {
+  height: 5vw;
+  width: 35vw;
+}
+
+.buttonText {
+  font-size: 3vw;
+  margin: 0;
+}

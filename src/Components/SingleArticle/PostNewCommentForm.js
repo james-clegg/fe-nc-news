@@ -22,7 +22,7 @@ class PostNewCommentForm extends Component {
             required
           />{" "}
           <br />
-          <button>Submit!</button>
+          <button className={styles.submitButton}><p className={styles.submitText}></p>Submit!</button>
         </form>
       </>
     );

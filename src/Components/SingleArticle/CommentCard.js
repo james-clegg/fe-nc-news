@@ -2,15 +2,16 @@ import React, { Component } from "react";
 import * as API from "../../api";
 import styles from "./comments.module.css";
 import ErrorPage from "../ErrorPage";
+import Voter from "./Voter";
 
 class CommentCard extends Component {
   state = {
-    incrementedVotes: 0,
+    currentVotes: 0,
     error: null
   };
 
   render() {
-    const { author, body, created_at } = this.props.comment;
+    const { author, body, created_at, comment_id } = this.props.comment;
     let { votes } = this.props.comment;
     if (this.state.error) return <ErrorPage error={this.state.error} />;
     return (
@@ -18,21 +19,12 @@ class CommentCard extends Component {
         <p> Author: {author}</p>
         <p>{body}</p>
         <p>Created on: {created_at.slice(0, 9)}</p>
-        <p>Votes: {(votes += this.state.incrementedVotes)}</p>
-        <button
-          className={styles.buttonStyle}
-          onClick={() => this.commentVoter(this.state.incrementedVotes, 1)}
-          disabled={this.state.incrementedVotes > 0}
-        >
-          <p className={styles.buttonText}>Upvote comment!</p>
-        </button>
-        <button
-          className={styles.buttonStyle}
-          onClick={() => this.commentVoter(this.state.incrementedVotes, -1)}
-          disabled={this.state.incrementedVotes < 0}
-        >
-          <p className={styles.buttonText}>Downvote comment!</p>
-        </button>
+        <p>Votes: {(votes += this.state.currentVotes)}</p>
+        <Voter
+          comment_id={comment_id}
+          currentVotes={this.state.currentVotes}
+          setVotes={this.setVotes}
+        />
         {this.props.user === author && (
           <button className={styles.buttonText} onClick={this.deleteComment}>
             <p className={styles.buttonText}>Delete comment</p>
@@ -42,10 +34,8 @@ class CommentCard extends Component {
     );
   }
 
-  commentVoter = (currentVotes, numberToIncrementBy) => {
-    API.voteOnComment(this.props.comment.comment_id, numberToIncrementBy);
-    currentVotes += numberToIncrementBy;
-    this.setState({ incrementedVotes: currentVotes });
+  setVotes = currentVotes => {
+    this.setState({ currentVotes });
   };
 
   deleteComment = () => {
