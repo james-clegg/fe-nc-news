@@ -9,17 +9,19 @@ class PostNewCommentForm extends Component {
   render() {
     return (
       <>
-        <h3 className={styles.textOnCommentsPage}>Post a new comment:</h3>
+        <h3 className={styles.commentSubheader}>Post a new comment:</h3>
         <form onSubmit={this.handleSubmit}>
-          <p className={styles.textOnCommentsPage}>Comment: </p>
+          <p className={styles.commentSubheader}>Comment: </p>
           <textarea
+            className={styles.newCommentBox}
             rows="10"
-            cols="80"
+            cols="40"
             name="comment"
             onChange={this.handleChange}
             value={this.state.comment}
             required
-          />
+          />{" "}
+          <br />
           <button>Submit!</button>
         </form>
       </>

@@ -20,7 +20,7 @@ class ListOfAllArticles extends Component {
       <>
         <p className={styles.listOfArticlesHeader}>Articles</p>
         <QuerySelectors updateQueries={this.updateQueries} />
-        <section className={styles.articleListFlex}>
+        <section className={styles.articleListGrid}>
           {this.state.articles.map(article => {
             return <ArticleCard article={article} key={article.article_id} />;
           })}

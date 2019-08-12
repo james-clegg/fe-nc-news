@@ -8,6 +8,7 @@ import SingleArticlePage from "./Components/SingleArticle/SingleArticlePage";
 import BurgerMenu from "./Components/BurgerMenu";
 import NCicon from "./Components/NCicon";
 import UserProfilePage from "./Components/UserProfilePage/UserProfilePage";
+import UserIcon from "./Components/UserIcon";
 import ErrorPage from "./Components/ErrorPage";
 
 class App extends Component {
@@ -18,8 +19,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="headerFlex">
+          <BurgerMenu username={this.state.user} />
+          <UserIcon user={this.state.user} />
+        </div>
         <WebsiteHeader user={this.state.user} />
-        <BurgerMenu username={this.state.user} />
         <NCicon />
         <Router>
           <ErrorPage default error={{ status: 404, msg: "page not found" }} />

@@ -38,22 +38,18 @@ class SingleArticle extends Component {
             Number of comments: {comment_count}
           </p>
           <button
+            className={styles.voteButton}
             onClick={() => this.articleVoter(this.state.incrementedVotes, 1)}
             disabled={this.state.incrementedVotes > 0}
           >
-            Upvote article!{" "}
-            <span role="img" aria-label="up arrow">
-              ⬆️
-            </span>
+            <p className={styles.buttonText}>Upvote article!</p>
           </button>
           <button
+            className={styles.voteButton}
             onClick={() => this.articleVoter(this.state.incrementedVotes, -1)}
             disabled={this.state.incrementedVotes < 0}
           >
-            Downvote article!{" "}
-            <span role="img" aria-label="down arrow">
-              ⬇️
-            </span>
+            <p className={styles.buttonText}>Downvote article!</p>
           </button>
         </section>
       </>

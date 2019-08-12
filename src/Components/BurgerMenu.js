@@ -4,7 +4,7 @@ import { slide as Menu } from "react-burger-menu";
 class BurgerMenu extends Component {
   render() {
     return (
-      <Menu >
+      <Menu>
         <a id="Home" className="menu-item" href="/">
           Home
         </a>

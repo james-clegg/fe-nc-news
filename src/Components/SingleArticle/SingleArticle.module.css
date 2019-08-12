@@ -1,23 +1,38 @@
+.SingleArticle {
+  font-size: 3vw;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+}
+
+.SingleArticleTitle {
+  color: rgb(102, 151, 115);
+  font-size: 7vw;
+  text-align: center;
+}
+
 .bodyOfArticle {
   color: rgb(102, 151, 115);
+  font-size: 4vw;
   font-weight: bold;
+  align-content: center;
 }
 
 .extraInfoOnArticle {
   color: rgb(102, 151, 115);
+  font-size: 3vw;
 }
 
 .votesOnArticle {
   color: rgb(102, 151, 115);
-  font-size: 25px;
+  font-size: 7vw;
 }
 
-.SingleArticle {
-  font-size: 20px;
-  font-family: "Open Sans", sans-serif;
+.voteButton {
+  height: 5vw;
+  width: 35vw;
 }
 
-.SingleArticleTitle {
-    color: rgb(102, 151, 115)
-
+.buttonText {
+  font-size: 3vw;
+  margin: 0;
 }

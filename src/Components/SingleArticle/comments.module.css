@@ -1,11 +1,32 @@
-.commentSuccessMessage {
-  font-size: 30px;
-  color: green;
+.commentHeader {
+  color: rgb(102, 151, 115);
+  font-size: 7vw;
+  text-align: center;
 }
 
-.commentFailureMessage {
-  font-size: 30px;
-  color: red;
+.commentSubheader {
+  color: rgb(102, 151, 115);
+  font-size: 5vw;
+  text-align: center;
+}
+
+.commentSuccessMessage {
+  font-size: 5vw;
+  color: rgb(102, 151, 115);
+  text-align: center;
+}
+
+.newCommentBox {
+  width: 100%;
+  resize: vertical;
+  overflow: auto;
+  padding: 0;
+}
+
+.listOfComments {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 .commentItem {
@@ -15,14 +36,15 @@
   color: rgb(102, 151, 115);
   list-style-type: none;
   font-family: "Open Sans", sans-serif;
+  font-size: 4vw;
 }
 
-.listOfComments {
+.buttonStyle {
+  height: 5vw;
+  width: 35vw;
+}
+
+.buttonText {
+  font-size: 3vw;
   margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-.textOnCommentsPage {
-  color: rgb(102, 151, 115);
 }

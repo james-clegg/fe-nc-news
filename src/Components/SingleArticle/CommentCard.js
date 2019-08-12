@@ -20,25 +20,23 @@ class CommentCard extends Component {
         <p>Created on: {created_at.slice(0, 9)}</p>
         <p>Votes: {(votes += this.state.incrementedVotes)}</p>
         <button
+          className={styles.buttonStyle}
           onClick={() => this.commentVoter(this.state.incrementedVotes, 1)}
           disabled={this.state.incrementedVotes > 0}
         >
-          Upvote comment!{" "}
-          <span role="img" aria-label="up arrow">
-            ⬆️
-          </span>{" "}
+          <p className={styles.buttonText}>Upvote comment!</p>
         </button>
         <button
+          className={styles.buttonStyle}
           onClick={() => this.commentVoter(this.state.incrementedVotes, -1)}
           disabled={this.state.incrementedVotes < 0}
         >
-          Downvote comment!{" "}
-          <span role="img" aria-label="down arrow">
-            ⬇️
-          </span>
+          <p className={styles.buttonText}>Downvote comment!</p>
         </button>
         {this.props.user === author && (
-          <button onClick={this.deleteComment}>Delete comment</button>
+          <button className={styles.buttonText} onClick={this.deleteComment}>
+            <p className={styles.buttonText}>Delete comment</p>
+          </button>
         )}
       </li>
     );

@@ -16,7 +16,7 @@ class ProfileHeader extends Component {
     if (error) return <ErrorPage error={error} />;
     return (
       <div>
-        <h1 className={styles.userProfileHeader}>{user.username}</h1>
+        <h1 className={styles.userProfileHeader}>Username: {user.username}</h1>
         <p className={styles.userProfileFullName}>Full name: {user.name}</p>
         <img
           className={styles.userProfileImage}

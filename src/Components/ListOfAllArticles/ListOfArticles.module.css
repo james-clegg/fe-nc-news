@@ -11,3 +11,10 @@
   flex-wrap: wrap;
   align-content: space-between;
 }
+
+.articleListGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: minmax(200px, auto);
+  grid-gap: 1rem;
+}

@@ -18,7 +18,7 @@ class CommentsOnArticle extends Component {
     if (this.state.error) return <ErrorPage error={this.state.error} />;
     return (
       <>
-        <h2 className={styles.textOnCommentsPage}>Comments</h2>
+        <h2 className={styles.commentHeader}>Comments</h2>
 
         {this.state.didDelete && (
           <p className={styles.commentSuccessMessage}>
