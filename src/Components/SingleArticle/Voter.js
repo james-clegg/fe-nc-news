@@ -13,14 +13,22 @@ class Voter extends Component {
           onClick={() => this.voter(currentVotes, 1)}
           disabled={currentVotes > 0}
         >
-          <p className={styles.buttonText}>Upvote article!</p>
+          {this.props.comment_id ? (
+            <p className={styles.buttonText}>Upvote comment!</p>
+          ) : (
+            <p className={styles.buttonText}>Upvote article!</p>
+          )}
         </button>
         <button
           className={styles.voteButton}
           onClick={() => this.voter(currentVotes, -1)}
           disabled={currentVotes < 0}
         >
-          <p className={styles.buttonText}>Downvote article!</p>
+          {this.props.comment_id ? (
+            <p className={styles.buttonText}>Downvote comment!</p>
+          ) : (
+              <p className={styles.buttonText}>Downvote article!</p>
+            )}
         </button>
       </div>
     );
@@ -30,7 +38,7 @@ class Voter extends Component {
     const { article_id, comment_id, setVotes } = this.props;
     API.voteOnCommentOrArticle(article_id, comment_id, numberToIncrementBy);
     currentVotes += numberToIncrementBy;
-    console.log(currentVotes)
+    console.log(currentVotes);
     setVotes(currentVotes);
   };
 }

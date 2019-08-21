@@ -27,7 +27,7 @@ class CommentCard extends Component {
         />
         {this.props.user === author && (
           <button className={styles.buttonText} onClick={this.deleteComment}>
-            <p className={styles.buttonText}>Delete comment</p>
+            <p className={styles.buttonText}>Delete comment!</p>
           </button>
         )}
       </li>

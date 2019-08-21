@@ -5,11 +5,23 @@
   color: rgb(102, 151, 115);
 }
 
+@media screen and (min-width: 900px) {
+  .userProfileHeader {
+    font-size: 4vw;
+  }
+}
+
 .userProfileFullName {
   text-align: center;
   font-family: "Open Sans", sans-serif;
   font-size: 6vw;
   color: rgb(102, 151, 115);
+}
+
+@media screen and (min-width: 900px) {
+  .userProfileFullName {
+    font-size: 4vw;
+  }
 }
 
 .userProfileImage {
@@ -18,6 +30,13 @@
   margin-right: auto;
   height: 40vw;
   width: 40vw;
+}
+
+@media screen and (min-width: 900px) {
+  .userProfileImage {
+    height: 25vw;
+    width: 25vw;
+  }
 }
 
 .articleListFlex {

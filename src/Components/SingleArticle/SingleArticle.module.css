@@ -10,6 +10,12 @@
   text-align: center;
 }
 
+@media screen and (min-width: 900px) {
+  .SingleArticleTitle {
+    font-size: 5vw;
+  }
+}
+
 .bodyOfArticle {
   color: rgb(102, 151, 115);
   font-size: 4vw;
@@ -17,9 +23,10 @@
   align-content: center;
 }
 
-.extraInfoOnArticle {
-  color: rgb(102, 151, 115);
-  font-size: 3vw;
+@media screen and (min-width: 900px) {
+  .bodyOfArticle {
+    font-size: 2vw;
+  }
 }
 
 .votesOnArticle {
@@ -27,12 +34,42 @@
   font-size: 7vw;
 }
 
+@media screen and (min-width: 900px) {
+  .votesOnArticle {
+    font-size: 4vw;
+  }
+}
+
+.extraInfoOnArticle {
+  color: rgb(102, 151, 115);
+  font-size: 3vw;
+}
+
+@media screen and (min-width: 900px) {
+  .extraInfoOnArticle {
+    font-size: 2vw;
+  }
+}
+
 .voteButton {
   height: 5vw;
   width: 35vw;
 }
 
+@media screen and (min-width: 900px) {
+  .voteButton {
+    height: 2vw;
+    width: 14vw;
+  }
+}
+
 .buttonText {
   font-size: 3vw;
   margin: 0;
+}
+
+@media screen and (min-width: 900px) {
+  .buttonText {
+    font-size: 2vw;
+  }
 }

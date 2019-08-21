@@ -1,8 +1,14 @@
 .listOfArticlesHeader {
   text-align: center;
   font-family: "Open Sans", sans-serif;
-  font-size: 50px;
+  font-size: 6vw;
   color: rgb(102, 151, 115);
+}
+
+@media screen and (min-width: 900px) {
+  .listOfArticlesHeader {
+    font-size: 4vw;
+  }
 }
 
 .articleListFlex {

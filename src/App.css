@@ -4,7 +4,6 @@
 
 body {
   background-color: #f6fcf7;
-  /* background-color: aqua; */
 }
 
 .App {
@@ -35,6 +34,12 @@ body {
   align-content: center;
 }
 
+@media screen and (min-width: 900px) {
+  .websiteHeader {
+    font-size: 5vw;
+  }
+}
+
 .headerIcon {
   justify-content: flex-end;
 }
@@ -46,6 +51,12 @@ body {
   color: rgb(102, 151, 115);
 }
 
+@media screen and (min-width: 900px) {
+  .UserIconAndName {
+    font-size: 2vw;
+  }
+}
+
 /*----------------------------------------------- BurgerMenu Styling --------------------------------------------------------------*/
 
 /* Position and sizing of burger button */
@@ -55,6 +66,15 @@ body {
   height: 5vw;
   left: 5vw;
   top: 5vw;
+}
+
+@media screen and (min-width: 900px) {
+  .bm-burger-button {
+    width: 2vw;
+    height: 2vw;
+    left: 2vw;
+    top: 2vw;
+  }
 }
 
 /* Color/shape of burger icon bars */

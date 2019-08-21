@@ -4,16 +4,34 @@
   text-align: center;
 }
 
+@media screen and (min-width: 900px) {
+  .commentHeader {
+    font-size: 4vw;
+  }
+}
+
 .commentSubheader {
   color: rgb(102, 151, 115);
   font-size: 5vw;
   text-align: center;
 }
 
+@media screen and (min-width: 900px) {
+  .commentSubheader {
+    font-size: 3.5vw;
+  }
+}
+
 .commentSuccessMessage {
   font-size: 5vw;
   color: rgb(102, 151, 115);
   text-align: center;
+}
+
+@media screen and (min-width: 900px) {
+  .commentSuccessMessage {
+    font-size: 3.5vw;
+  }
 }
 
 .newCommentBox {
@@ -39,3 +57,18 @@
   font-size: 4vw;
 }
 
+@media screen and (min-width: 900px) {
+  .commentItem {
+    font-size: 2vw;
+  }
+}
+
+.buttonStyle {
+  height: 3vw;
+  width: 21vw;
+}
+
+.buttonText {
+  font-size: 2vw;
+  margin: 0;
+}

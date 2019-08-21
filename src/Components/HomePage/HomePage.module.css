@@ -5,6 +5,12 @@
   color: rgb(102, 151, 115);
 }
 
+@media screen and (min-width: 900 px) {
+  .header {
+    font-size: 200vw;
+  }
+}
+
 .featuredListFlex {
   display: flex;
   flex-direction: row;

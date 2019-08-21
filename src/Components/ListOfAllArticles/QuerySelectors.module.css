@@ -2,10 +2,22 @@
   font-family: "Open Sans", sans-serif;
   font-size: 2vw;
   padding-right: 20px;
-  margin-bottom: 30px
+  margin-bottom: 30px;
 }
 
 .QueryButton {
   font-family: "Open Sans", sans-serif;
   font-size: 2vw;
+}
+
+@media screen and (min-width: 900px) {
+  .querySelectorLabel {
+    font-size: 1.5vw;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .QueryButton {
+    font-size: 1.5vw;
+  }
 }

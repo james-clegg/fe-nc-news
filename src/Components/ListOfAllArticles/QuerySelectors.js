@@ -27,6 +27,7 @@ const QuerySelectors = props => {
           <option value="asc">Ascending</option>
         </select>
       </label>
+      <br />
       <label className={styles.querySelectorLabel}>
         Filter by topic:
         <select
